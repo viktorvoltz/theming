@@ -2,7 +2,7 @@
 
 This is an *opinionated* and effective way to provide multi-theme choice for your app.
 
-![themes](https://user-images.githubusercontent.com/45709308/187513887-f14ad4ab-c99d-413f-a7dc-0e05d5782110.gif)
+<img src="https://user-images.githubusercontent.com/45709308/187513887-f14ad4ab-c99d-413f-a7dc-0e05d5782110.gif" width="40%" height="40%" />
 
 theming depends on `provider` and `shared_preference` for state management and data retention respectively.
 
