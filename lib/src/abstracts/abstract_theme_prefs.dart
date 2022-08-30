@@ -3,5 +3,5 @@ abstract class ThemePreference{
   void setData(String key, dynamic value);
 
   /// read Data
-  String readData(String key);
+  dynamic readData(String key);
 }
