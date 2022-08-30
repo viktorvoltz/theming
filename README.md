@@ -18,9 +18,12 @@ final pref = await SharedPreferences.getInstance();
   themeProvider.assertTheme();
 ```
 
-the key to retaining the value of `themeProvider.assertTheme()` is assigning it ti a `static` variable.
+the key to retaining the value of `themeProvider.assertTheme()` is assigning relevant data it to a `static` variable.
 ```dart
 static ThemeData? _themeData;
 ```
 `_themeData` retains its value through the creation and recreation of the `ThemeProvider` object in app's lifecycle.
 
+in what is relevant here, our variable of type `ThemeData` will work our trick.
+
+if you find this repo useful make to star 🌟 it. thank you.
