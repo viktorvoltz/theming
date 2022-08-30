@@ -12,12 +12,16 @@ class HomePage extends StatelessWidget {
   List<String> items = [
     'light',
     'dark',
+    'deep',
   ];
 
   @override
   Widget build(BuildContext context) {
     var theme = Provider.of<ThemeProvider>(context);
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Theming")
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
