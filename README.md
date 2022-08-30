@@ -1,16 +1,26 @@
-# themeing
+# theming
 
-A new Flutter project.
+This is an *opinionated* and effective way to provide multi-theme choice for your app.
 
-## Getting Started
+![themes](https://user-images.githubusercontent.com/45709308/187513887-f14ad4ab-c99d-413f-a7dc-0e05d5782110.gif)
 
-This project is a starting point for a Flutter application.
+theming depends on `provider` and `shared_preference` for state management and data retention respectively.
 
-A few resources to get you started if this is your first Flutter project:
+theming solves the issue of ** loading a default theme ** on the app startup before fetching last theme state from shared pref. After seeing this issue from in two public articles, i decided to give it a try :shipit:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## key code
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+in `main()` and before `runApp()` is loaded, a single instance of `SharedPreferences` (none is created again thoughout the app) is gotten and passed into `ThemeProvider`. This is bacause it is imperative to acquire the last/previous theme state before loading the app. yes, `themeProvider.assertTheme()`.
+
+```dart
+final pref = await SharedPreferences.getInstance();
+  ThemeProvider themeProvider = ThemeProvider(pref);
+  themeProvider.assertTheme();
+```
+
+the key to retaining the value of `themeProvider.assertTheme()` is assigning it ti a `static` variable.
+```dart
+static ThemeData? _themeData;
+```
+`_themeData` retains its value through the creation and recreation of the `ThemeProvider` object in app's lifecycle.
+
