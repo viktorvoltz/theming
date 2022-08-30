@@ -7,8 +7,9 @@ class ThemePreferenceimpl extends ThemePreference{
   ThemePreferenceimpl(this.pref);
 
   @override
-  String readData(String key) {
+  dynamic readData(String key) {
     dynamic obj = pref.get(key);
+    print(obj);
     return obj;
   }
 
