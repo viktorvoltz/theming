@@ -23,8 +23,10 @@ class ThemeProvider extends ChangeNotifier {
     themeMode = value ?? 'light';
     if (themeMode == 'light') {
       _themeData = lightTheme;
-    } else {
+    } else if(themeMode == "dark") {
       _themeData = darkTheme;
+    } else {
+      _themeData = deepTheme;
     }
     notifyListeners();
   }
@@ -36,6 +38,9 @@ class ThemeProvider extends ChangeNotifier {
         break;
       case "dark":
         setDarkMode();
+        break;
+      case "deep":
+        setDeepMode();
         break;
       default:
         setLightMode();
@@ -54,6 +59,13 @@ class ThemeProvider extends ChangeNotifier {
     _themeData = lightTheme;
     themeMode = "light";
     themePreferenceimpl.setData(themeValue, 'light');
+    notifyListeners();
+  }
+
+  void setDeepMode() async {
+    _themeData = deepTheme;
+    themeMode = "deep";
+    themePreferenceimpl.setData(themeValue, 'deep');
     notifyListeners();
   }
 }
