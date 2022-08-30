@@ -6,6 +6,7 @@ import 'package:themeing/src/provider/theme_provider.dart';
 import 'src/pages/home_page.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   final pref = await SharedPreferences.getInstance();
   ThemeProvider themeProvider = ThemeProvider(pref);
   themeProvider.assertTheme();
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       builder: (ctx, value, child) {
         return MaterialApp(
           theme: value.getTheme(),
-          home: const HomePage(),
+          home: HomePage(),
         );
       },
     );
