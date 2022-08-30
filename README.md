@@ -6,7 +6,7 @@ This is an *opinionated* and effective way to provide multi-theme choice for you
 
 theming depends on `provider` and `shared_preference` for state management and data retention respectively.
 
-theming solves the issue of **loading a default theme** on the app startup before fetching last theme state from shared pref. After seeing this issue from in two public articles, i decided to give it a try :shipit:
+theming solves the issue of **loading a default theme** on the app startup before fetching last theme state from shared pref. After seeing this issue in two public articles, i decided to give it a try :shipit:
 
 ## key code
 
