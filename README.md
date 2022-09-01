@@ -26,4 +26,4 @@ static ThemeData? _themeData;
 
 in what is relevant here, our variable of type `ThemeData` will work our trick.
 
-if you find this repo useful make to star 🌟 it. thank you.
+if you find this repo useful, make sure to star 🌟 it. thank you.
