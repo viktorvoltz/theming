@@ -10,7 +10,7 @@ theming solves the issue of **loading a default theme** on the app startup befor
 
 ## key code
 
-in `main()` and before `runApp()` is loaded, a single instance of `SharedPreferences` (none is created again thoughout the app) is gotten and passed into `ThemeProvider`. This is bacause it is imperative to acquire the last/previous theme state before loading the app. yes, `themeProvider.assertTheme()`.
+in `main()` and before `runApp()` is loaded, a single instance of `SharedPreferences` (none is created again thoughout the app) is created and passed into `ThemeProvider`. This is bacause it is imperative to acquire the last/previous theme state before loading the app. yes, `themeProvider.assertTheme()`.
 
 ```dart
 final pref = await SharedPreferences.getInstance();
